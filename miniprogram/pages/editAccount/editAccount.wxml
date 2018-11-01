@@ -1,0 +1,26 @@
+<view class="container">
+  <input type="text" class="accuntName" placeholder="旅行账本名称" />
+  <view class="panel">
+    <van-panel title="选择封面" class="panel">
+      <van-row class="imageBox">
+        <block wx:for="{{images}}" wx:key="index">
+          <van-col span="8">
+            <image class="image" src="{{item.cover_url}}"></image>
+          </van-col>
+          <block wx:if="{{index + 1 === images.length}}">
+            <block wx:if="{{selectImg}}">
+              <van-col span="8">
+                <image class="image" src="{{selectImg}}"></image>
+              </van-col>
+            </block>
+            <van-col span="8">
+              <view class="addBox" bindtap="useMore">更多封面</view>
+            </van-col>
+          </block>
+        </block>
+      </van-row>
+    </van-panel>
+  </view>
+  <button type="primary">保存</button>
+  <button type="warn">删除</button>
+</view>

@@ -1,0 +1,42 @@
+.container {
+  height: 100%;
+}
+
+input.accuntName {
+  box-sizing: border-box;
+  height: 100rpx;
+  width: 90%;
+  border: 1px solid #8f8d8d;
+  border-radius: 10rpx;
+  margin: 4% 0 4%;
+  padding: 0 25rpx;
+}
+
+.panel {
+  height: 700rpx;
+}
+
+.imageBox {
+  text-align: center;
+}
+
+.image, .addBox {
+  width: 200rpx;
+  height: 260rpx;
+  margin: 20rpx 10rpx;
+  border-radius: 20rpx;
+}
+
+.addBox {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 2px dashed #b6b3b3;
+  padding-top: 100rpx;
+  color: #8f8d8d;
+}
+
+.container > button {
+  width: 80%;
+  border-radius: 50rpx;
+  margin-top: 5%;
+}
