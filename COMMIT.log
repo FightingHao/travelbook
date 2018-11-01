@@ -1,0 +1,14 @@
+2018-11-01 √
+  今日安排
+    写页面
+      index 首页
+      editAccount 账本编辑页  使用vant组件
+      accoutBooks 总账本页  flex布局+swiper组件
+  完成时间
+    23:39
+  完成度
+    结构样式完成度——80%
+    交互完成度——30%
+    总项目完成度——20%
+  总结
+    editAccount页和accoutBooks较多，用时较长。不过最后界面效果还算不错
