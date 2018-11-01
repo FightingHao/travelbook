@@ -1,0 +1,86 @@
+.container {
+  height: 100%;
+  background-color: #3A3A3A;
+}
+
+.accountDesc, .newAccount {
+  margin: 20% auto 10%;
+  height: 80%;
+  width: 90%;
+  border-radius: 20rpx;
+}
+
+.newAccount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px dashed #acabab;
+}
+
+.accountDesc {
+  position: relative;
+  background-color: #f7f7f7;
+  background-repeat: no-repeat;
+  background-size: 100% 80%;
+}
+
+.accountName {
+  height: 10%;
+  position: absolute;
+  left: 5%;
+  bottom: 8%;
+}
+
+.accountName > .accountTime {
+  font-size: 32rpx;
+  margin-top: 16rpx;
+  color: #8d8a8a;
+}
+
+.newAccount:active {
+  border: 1px dashed red;
+}
+
+.newAccount > .desc {
+  width: 70%;
+  margin: 25% auto;
+  color: #838383;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.newAccount > image {
+  height: 90rpx;
+  width: 90rpx;
+}
+
+.newAccount > .title {
+  color: #D3D3D3;
+  font-size: 40rpx;
+  margin-top: 40rpx;
+}
+
+.list {
+  z-index: 1;
+}
+
+.list, .list + image {
+  position: absolute;
+  left: 25rpx;
+  top: 25rpx;
+  height: 60rpx;
+  width: 60rpx;
+}
+
+swiper {
+  height: 100%;
+  width: 100%;
+}
+
+.updateImg {
+  position: absolute;
+  height: 40rpx;
+  width: 40rpx;
+  right: 20rpx;
+  bottom: 20rpx;
+}
