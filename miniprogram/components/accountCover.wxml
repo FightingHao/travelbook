@@ -1,0 +1,7 @@
+<view class="accountDesc" style="background-image: url({{backgroundImage}})">
+  <view class="accountName">
+    <view>厦门鼓浪屿一日游</view>
+    <view class="accountTime">2017-06-05</view>
+  </view>
+  <slot></slot>
+</view>
