@@ -1,18 +1,20 @@
+const db = wx.cloud.database()
+
 Page({
   data: {
     isList: false,
-    image: [
-      {
-        "url": "https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/182903.png?sign=c65705c7832786b85ccd8a05a95cf521&t=1540973007"
-      },
-      {
-        "url": "https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/182903.png?sign=c65705c7832786b85ccd8a05a95cf521&t=1540973007"
-      }
-    ]
+    accounts: []
   },
   createNewAccount() {
     wx.navigateTo({
       url: '../editAccount/editAccount'
+    })
+  },
+
+  deleteAccount(e) {
+    let {account} = e.currentTarget.dataset
+    wx.navigateTo({
+      url: `../editAccount/editAccount?id=${account._id}&value=${account.inputValue}&url=${account.coverUrl}`
     })
   },
 
@@ -33,7 +35,19 @@ Page({
   },
 
   onLoad() {
+    wx.showLoading({
+      title: '数据加载中'
+    })
     var isList = wx.getStorageSync('isList')
+    db.collection('accounts')
+      .get({
+        success: res => {
+          this.setData({
+            accounts: res.data
+          })
+          wx.hideLoading()
+        }
+      })
     this.setData({
       isList
     })

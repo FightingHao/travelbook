@@ -3,7 +3,7 @@
   background-color: #3A3A3A;
 }
 
-.accountDesc, .newAccount {
+.newAccount {
   margin: 20% auto 10%;
   height: 80%;
   width: 90%;
@@ -17,7 +17,7 @@
   border: 1px dashed #acabab;
 }
 
-.accountDesc {
+/* .accountDesc {
   position: relative;
   background-color: #f7f7f7;
   background-repeat: no-repeat;
@@ -35,7 +35,7 @@
   font-size: 32rpx;
   margin-top: 16rpx;
   color: #8d8a8a;
-}
+} */
 
 .newAccount:active {
   border: 1px dashed red;
