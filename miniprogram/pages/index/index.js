@@ -4,7 +4,7 @@ Page({
   },
   startAccounts() {
     wx.showLoading({
-      'title': '旅程即将开始'
+      title: '旅程即将开始'
     })
     setTimeout(() => {
       wx.hideLoading()
