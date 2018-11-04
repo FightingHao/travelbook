@@ -1,26 +1,32 @@
 <view class="container">
-  <input type="text" class="accuntName" placeholder="旅行账本名称" />
+  <input type="text" class="accuntName" placeholder="旅行账本名称" bindinput="getInput" value="{{account.value}}" />
   <view class="panel">
     <van-panel title="选择封面" class="panel">
       <van-row class="imageBox">
         <block wx:for="{{images}}" wx:key="index">
-          <van-col span="8">
+          <van-col span="8" class="imgCol" bindtap="selectThis" data-index="{{item.cover_index}}" data-coverUrl="{{item.cover_url}}">
+            <block wx:if="{{isSelected[index]}}">
+              <image class="select" src="https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/勾.svg?sign=e7b07617cb0420a988912d5f40520774&t=1541219477"></image>
+            </block>
             <image class="image" src="{{item.cover_url}}"></image>
           </van-col>
           <block wx:if="{{index + 1 === images.length}}">
             <block wx:if="{{selectImg}}">
-              <van-col span="8">
+              <van-col span="8" class="imgCol" bindtap="selectThis" data-index="{{images.length}}" data-coverUrl="{{selectImg}}">
+                <block wx:if="{{isSelected[images.length]}}">
+                  <image class="select" src="https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/勾.svg?sign=e7b07617cb0420a988912d5f40520774&t=1541219477"></image>
+                </block>
                 <image class="image" src="{{selectImg}}"></image>
               </van-col>
             </block>
             <van-col span="8">
-              <view class="addBox" bindtap="useMore">更多封面</view>
+              <view class="addBox" data-index="{{images.length}}" bindtap="useMore">更多封面</view>
             </van-col>
           </block>
         </block>
       </van-row>
     </van-panel>
   </view>
-  <button type="primary">保存</button>
-  <button type="warn">删除</button>
+  <button type="primary" bindtap="save">保存</button>
+  <button type="warn" bindtap="delete">删除</button>
 </view>

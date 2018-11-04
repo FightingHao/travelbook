@@ -40,3 +40,15 @@ input.accuntName {
   border-radius: 50rpx;
   margin-top: 5%;
 }
+
+.van-col {
+  position: relative;
+}
+
+.select {
+  position: absolute;
+  right: 30rpx;
+  bottom: 36rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
