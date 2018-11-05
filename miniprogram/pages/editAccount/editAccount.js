@@ -87,6 +87,11 @@ Page({
     let inputValue = this.data.inputValue
     let { i, coverUrl } = this.data.isSelected
     let now = null
+
+    if(!inputValue) {
+      
+    }
+
     wx.cloud.callFunction({
       name: 'getTime',
       success: (res) => {
@@ -156,5 +161,36 @@ Page({
         }
       }
     })
+  },
+
+  save() {
+    let { id } = this.data.account
+    let { i, coverUrl, value } = this.data.isSelected
+    let inputValue = this.data.inputValue || value
+
+    wx.showLoading({
+      title: '正在保存'
+    })
+
+    db.collection('accounts')
+      .doc(id)
+      .update({
+        data: {
+          inputValue,
+          coverUrl,
+          i
+        },
+        success: res => {
+          wx.hideLoading()
+          wx.showToast({
+            title: '保存成功'
+          })
+          setTimeout(() => {
+            wx.reLaunch({
+              url: '../accountBooks/accountBooks'
+            })
+          }, 400)
+        }
+      })
   }
 })
