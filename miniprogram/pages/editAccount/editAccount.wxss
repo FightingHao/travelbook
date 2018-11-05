@@ -41,6 +41,10 @@ input.accuntName {
   margin-top: 5%;
 }
 
+.container > .addBtn {
+  margin-top: 13%;
+}
+
 .van-col {
   position: relative;
 }

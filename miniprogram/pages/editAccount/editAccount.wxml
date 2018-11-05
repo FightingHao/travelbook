@@ -27,6 +27,11 @@
       </van-row>
     </van-panel>
   </view>
-  <button type="primary" bindtap="save">保存</button>
-  <button type="warn" bindtap="delete">删除</button>
+  <block wx:if="{{!account.id}}">
+    <button class="addBtn" type="primary" bindtap="add">保存</button>
+  </block>
+  <block wx:if="{{account.id}}">
+    <button type="primary" bindtap="save">保存</button>
+    <button type="warn" bindtap="delete">删除</button>
+  </block>
 </view>

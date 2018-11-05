@@ -14,6 +14,7 @@ Page({
     let index = e.currentTarget.dataset.index
     let isSelected = {}
     isSelected[index] = true
+    isSelected.i = index
     wx.chooseImage({
       count: 1,
       success: res => {
@@ -26,7 +27,20 @@ Page({
     })
   },
   onLoad(options) {
-    let {id, value, url} = options
+    // 键为字符串*
+    let { i, id, value, url } = options
+    let obj = {
+      i,
+      coverUrl: url
+    }
+    obj[i] = true
+
+    // 不能用全等符号'==='
+    if (i == 4) {
+      this.setData({
+        selectImg: url
+      })
+    }
     photos.where({
       isCommon: true
     }).get({
@@ -36,8 +50,10 @@ Page({
           account: {
             id,
             value,
-            url
-          }
+            url,
+            i
+          },
+          isSelected: obj
         })
         wx.hideLoading()
       }
@@ -55,6 +71,7 @@ Page({
       coverUrl
     }
     obj[index] = !is
+    obj.i = index
     this.setData({
       isSelected: obj
     })
@@ -66,9 +83,9 @@ Page({
     })
   },
 
-  save() {
+  add() {
     let inputValue = this.data.inputValue
-    let { coverUrl } = this.data.isSelected
+    let { i, coverUrl } = this.data.isSelected
     let now = null
     wx.cloud.callFunction({
       name: 'getTime',
@@ -92,7 +109,8 @@ Page({
             data: {
               inputValue,
               coverUrl,
-              now
+              now,
+              i
             },
             success: res => {
               wx.hideLoading()
