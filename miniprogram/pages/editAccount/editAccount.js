@@ -33,7 +33,10 @@ Page({
       i,
       coverUrl: url
     }
-    obj[i] = true
+
+    if (i != undefined) {
+      obj[i] = true
+    }
 
     // 不能用全等符号'==='
     if (i == 4) {
@@ -53,7 +56,8 @@ Page({
             url,
             i
           },
-          isSelected: obj
+          isSelected: obj,
+          inputValue: value
         })
         wx.hideLoading()
       }
@@ -83,14 +87,21 @@ Page({
     })
   },
 
+  addErr() {
+    let inputValue = this.data.inputValue
+    if (!inputValue) {
+      wx.showModal({
+        title: '请输入账本名',
+        content: '例如：南昌三日游',
+        showCancel: false
+      })
+    }
+  },
+
   add() {
     let inputValue = this.data.inputValue
     let { i, coverUrl } = this.data.isSelected
     let now = null
-
-    if(!inputValue) {
-      
-    }
 
     wx.cloud.callFunction({
       name: 'getTime',

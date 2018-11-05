@@ -28,10 +28,20 @@
     </van-panel>
   </view>
   <block wx:if="{{!account.id}}">
-    <button class="addBtn" type="primary" bindtap="add">保存</button>
+    <block wx:if="{{inputValue && isSelected[isSelected.i]}}">
+      <button class="addBtn" type="primary" bindtap="add">保存</button>
+    </block>
+    <block wx:else>
+      <button class="addBtn" bindtap="addErr">保存</button>
+    </block>
   </block>
   <block wx:if="{{account.id}}">
-    <button type="primary" bindtap="save">保存</button>
+    <block wx:if="{{inputValue && isSelected[isSelected.i]}}">
+      <button type="primary" bindtap="save">保存</button>
+    </block>
+    <block wx:else>
+      <button bindtap="addErr">保存</button>
+    </block>
     <button type="warn" bindtap="delete">删除</button>
   </block>
 </view>
