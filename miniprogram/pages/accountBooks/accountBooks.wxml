@@ -6,7 +6,7 @@
       <block wx:for="{{accounts}}" wx:key="index">
         <swiper-item>
           <accountCover account="{{item}}">
-            <image class="updateImg" bindtap="deleteAccount" data-account="{{item}}" src="https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/修改(1).svg?sign=b7b6f21449f4d4caaaf955e0c2d86c5f&t=1541059524"></image>
+            <image class="updateImg" bindtap="editAccount" data-account="{{item}}" src="https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/修改(1).svg?sign=b7b6f21449f4d4caaaf955e0c2d86c5f&t=1541059524"></image>
           </accountCover>
         </swiper-item>
       </block>

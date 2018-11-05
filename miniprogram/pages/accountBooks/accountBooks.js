@@ -11,10 +11,10 @@ Page({
     })
   },
 
-  deleteAccount(e) {
+  editAccount(e) {
     let {account} = e.currentTarget.dataset
     wx.navigateTo({
-      url: `../editAccount/editAccount?id=${account._id}&value=${account.inputValue}&url=${account.coverUrl}`
+      url: `../editAccount/editAccount?i=${account.i}&id=${account._id}&value=${account.inputValue}&url=${account.coverUrl}`
     })
   },
 
