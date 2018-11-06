@@ -38,6 +38,12 @@ Page({
       obj[i] = true
     }
 
+    if(value) {
+      this.setData({
+        inputValue: value
+      })
+    }
+
     // 不能用全等符号'==='
     if (i == 4) {
       this.setData({
@@ -56,8 +62,7 @@ Page({
             url,
             i
           },
-          isSelected: obj,
-          inputValue: value
+          isSelected: obj
         })
         wx.hideLoading()
       }
