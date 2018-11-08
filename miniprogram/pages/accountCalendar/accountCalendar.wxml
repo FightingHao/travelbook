@@ -1,0 +1,6 @@
+<view class="container">
+  <calendar weeks-type="cn" cell-size="50" next="{{true}}" prev="{{true}}"
+  show-more-days="{{true}}" calendar-style="demo6-calendar" header-style="calendar-header"
+  board-style="calendar-board" active-type="rounded" lunar="true" header-style="header"calendar-style="calendar"
+  days-color="{{days_style}}"></calendar>
+</view>

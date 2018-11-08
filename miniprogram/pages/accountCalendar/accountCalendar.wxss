@@ -1,0 +1,15 @@
+.container {
+  padding-top: 10rpx;
+}
+
+.header {
+    font-size: 40rpx; /*修改了标题文字和按钮的大小*/
+    color: #86868d;   /*修改了标题文字和按钮的颜色*/
+    line-height: 40rpx;
+}
+
+.calendar {
+  padding-top: 30rpx;
+  border-radius: 15px;
+  box-shadow: 0 10rpx 10rpx #8d8d86;
+}
