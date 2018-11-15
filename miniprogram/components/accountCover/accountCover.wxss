@@ -1,0 +1,32 @@
+.accountDesc {
+  margin: 20% auto 10%;
+  height: 80%;
+  width: 90%;
+  border-radius: 20rpx;
+
+  position: relative;
+  background-color: #f7f7f7;
+  background-repeat: no-repeat;
+  background-size: 100% 80%;
+}
+
+.accountName {
+  height: 10%;
+  position: absolute;
+  left: 5%;
+  bottom: 8%;
+}
+
+.accountName > .accountTime {
+  font-size: 32rpx;
+  margin-top: 16rpx;
+  color: #8d8a8a;
+}
+
+.updateImg {
+  position: absolute;
+  height: 40rpx;
+  width: 40rpx;
+  right: 20rpx;
+  bottom: 20rpx;
+}
