@@ -1,0 +1,50 @@
+<view class="container" style="background-image: url({{account.coverUrl}})">
+  <view class="account__spend">
+    <image bindtap="getCalendar" class="account__spend-calendar" src="https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/日历(1).svg?sign=ab78a6d1fb6f34461f2f97fc7d92ec71&t=1541603361"></image>
+    <view class="account__spend-text">
+      <view class="account__spend-total">总花费(元)</view>
+      <view class="account__spend-num">{{account.spend}}</view>
+    </view>
+    <image bindtap="accountAnalyze" class="account__spend-detail" src="https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/分析.svg?sign=f6f7e2e3c9e6ecabd0b4845e4fb46333&t=1541603927"></image>
+  </view>
+  <view class="account__show">
+    <!-- <image bindtap="delAccountList" class="account__show-del" src="https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/橡皮擦(1).svg?sign=8fcd14d28458964ad304d2e53de77c99&t=1541641233"></image> -->
+    <view class="account__show-time">今天</view>
+    <view class="account__show-detail">
+      <view class="account__show-income account__show-public">
+        <view class="account__show-title">收入(元)</view>
+        <text class="account__show-in">+{{income_money}}</text>
+      </view>
+      <view class="account__show-spend account__show-public">
+        <view class="account__show-title">支出(元)</view>
+        <text class="account__show-out">-{{spend_money}}</text>
+      </view>
+    </view>
+    <view class="account__show-items">
+      <block wx:for="{{spend}}" wx:key="index">
+        <view class="account__show-items-spend">
+          <view>
+            <image src="{{item.pic_url}}"></image>
+          </view>
+          <text>{{item.pic_type}}</text>
+          <text class="account__show-items-money">-{{item.money}}</text>
+        </view>
+      </block>
+
+      <block wx:for="{{income}}" wx:key="index">
+        <view class="account__show-items-spend">
+          <view style="background-color: #4dd34d">
+            <image src="{{item.pic_url}}"></image>
+          </view>
+          <text>{{item.pic_type}}</text>
+          <text class="account__show-items-money" style="color: #4dd34d">+{{item.money}}</text>
+        </view>
+      </block>
+    </view>
+    <view class="account__add-1" bindtap="recordAccount"></view>
+    <view class="account__add-2"></view>
+    <view class="account__add-3">
+      <image src="https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/add.png?sign=73aaa6aeee19fbe4cf938c95bfae28db&t=1541663787"></image>
+    </view>
+  </view>
+</view>

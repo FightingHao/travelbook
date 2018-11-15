@@ -1,0 +1,157 @@
+.container {
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.account__spend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin-top: 4%;
+}
+
+.account__spend-calendar, .account__spend-detail {
+  width: 66rpx;
+  height: 66rpx;
+}
+
+.account__spend-text {
+  flex: 1;
+  text-align: center;
+}
+
+.account__spend-num {
+  margin-top: 3%;
+  font-size: 56rpx;
+}
+
+.account__show {
+  position: absolute;
+  width: 80%;
+  min-height: 30%;
+  background-color: #fff;
+  bottom: 8%;
+  border-radius: 4rpx;
+  padding-bottom: 10rpx;
+}
+
+.account__show-time {
+  color: #000;
+  text-align: center;
+  margin: 26rpx 0 30rpx;
+}
+
+.account__show-del {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  color: #000;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.account__show-public {
+  width: 50%;
+  height: 120rpx;
+  color: #000;
+  text-align: center;
+}
+
+.account__show-income {
+  float: right;
+  border-left: 1px solid #d6d4d4;
+}
+
+.account__show-title {
+  margin-bottom: 20rpx;
+  font-size: 35rpx;
+}
+
+.account__show-out {
+  color: #F56E51;
+}
+
+.account__show-in {
+  color: #4dd34d;
+}
+
+.account__show-items {
+  margin-top: 20rpx;
+}
+
+.account__show-items-spend {
+  color: #000;
+  border-top: 1px solid #dbd6d6;
+  padding: 0 20rpx;
+  height: 60rpx;
+}
+
+.account__show-items-spend > view {
+  float: left;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+  background-color: #f56241;
+  text-align: center;
+  margin-top: 5rpx;
+  vertical-align: middle;
+}
+
+.account__show-items-spend image {
+  margin-top: 5rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.account__show-items-spend text {
+  margin-left: 20rpx;
+  font-size: 34rpx;
+}
+
+.account__show-items-money {
+  color: #F56E51;
+  float: right;
+}
+
+.account__add-1, .account__add-2, .account__add-3 {
+  border-radius: 70rpx;
+  background-color: #F56E51;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.account__add-1 {
+  width: 140rpx;
+  height: 140rpx;
+  bottom: -70rpx;
+  opacity: .1;
+  z-index: 1;
+}
+
+.account__add-2 {
+  width: 110rpx;
+  height: 110rpx;
+  bottom: -55rpx;
+  opacity: .3;
+}
+
+.account__add-3 {
+  width: 80rpx;
+  height: 80rpx;
+  bottom: -40rpx;
+}
+
+.account__add-3 image {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 60rpx;
+  height: 60rpx;
+}
