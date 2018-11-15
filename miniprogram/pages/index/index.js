@@ -12,5 +12,11 @@ Page({
         url: '../accountBooks/accountBooks'
       })
     }, 600);
+  },
+  onPullDownRefresh: function () {
+    // do somthing
+    console.log(11)
+    // 小程序提供的api，通知页面停止下拉刷新效果
+    wx.stopPullDownRefresh;
   }
 })

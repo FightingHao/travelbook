@@ -3,13 +3,15 @@ const photos = db.collection('cover_photos')
 
 Page({
   data: {
-    images: [],
-    selectImg: null,
-    isSelected: {},
-    inputValue: '',
-    now: null,
-    account: {}
+    images: [],      // 封面数组
+    selectImg: null, // 选择其它封面
+    isSelected: {},  // 选中的图片
+    inputValue: '',  // 账本名字
+    now: null,       // 当前时间
+    account: {}      // 传入账本信息
   },
+
+  // 选择更多图片做封面
   useMore(e) {
     let index = e.currentTarget.dataset.index
     let isSelected = {}
@@ -26,9 +28,11 @@ Page({
       }
     })
   },
+
+  // 加载逻辑
   onLoad(options) {
     // 键为字符串*
-    let { i, id, value, url } = options
+    let { i, id, value, url, accountKey } = options
     let obj = {
       i,
       coverUrl: url
@@ -38,7 +42,7 @@ Page({
       obj[i] = true
     }
 
-    if(value) {
+    if (value) {
       this.setData({
         inputValue: value
       })
@@ -50,9 +54,7 @@ Page({
         selectImg: url
       })
     }
-    photos.where({
-      isCommon: true
-    }).get({
+    photos.get({
       success: res => {
         this.setData({
           images: res.data,
@@ -60,7 +62,8 @@ Page({
             id,
             value,
             url,
-            i
+            i,
+            accountKey
           },
           isSelected: obj
         })
@@ -72,6 +75,7 @@ Page({
     })
   },
 
+  // 单选逻辑
   selectThis(e) {
     let index = e.currentTarget.dataset.index
     let coverUrl = e.currentTarget.dataset.coverurl
@@ -103,11 +107,14 @@ Page({
     }
   },
 
+  // 添加账本
   add() {
-    let inputValue = this.data.inputValue
+    let now = null  // 当前时间
+    let accountKey = +new Date()  // 主键
+    let { inputValue } = this.data
     let { i, coverUrl } = this.data.isSelected
-    let now = null
 
+    // 云函数格式化时间
     wx.cloud.callFunction({
       name: 'getTime',
       success: (res) => {
@@ -122,6 +129,7 @@ Page({
       title: '正在保存'
     })
 
+    // 数据库添加操作
     let timer = setInterval(() => {
       if (this.data.now) {
         now = this.data.now
@@ -131,26 +139,31 @@ Page({
               inputValue,
               coverUrl,
               now,
-              i
-            },
-            success: res => {
-              wx.hideLoading()
-              wx.showToast({
-                title: '保存成功'
-              })
-              setTimeout(() => {
-                wx.reLaunch({
-                  url: '../accountBooks/accountBooks'
-                })
-              }, 400)
+              i,
+              spend: 0,
+              accountKey
             }
+          })
+          .then(() => {
+            wx.hideLoading()
+            wx.showToast({
+              title: '保存成功'
+            })
+            setTimeout(() => {
+              wx.reLaunch({
+                url: '../accountBooks/accountBooks'
+              })
+            }, 400)
           })
         clearInterval(timer)
       }
     }, 100)
   },
 
+  // 删除账本
   delete() {
+    let accountKey = this.data.account.accountKey
+    accountKey = Number(accountKey)
     wx.showModal({
       title: '确定要删除吗？',
       content: `${this.data.account.value}`,
@@ -161,27 +174,34 @@ Page({
           })
           db.collection('accounts')
             .doc(this.data.account.id)
-            .remove({
-              success: res => {
-                wx.hideLoading()
-                wx.showToast({
-                  title: '删除成功'
+            .remove()
+            .then(() => {
+              wx.hideLoading()
+              wx.showToast({
+                title: '删除成功'
+              })
+              setTimeout(() => {
+                wx.reLaunch({
+                  url: '../accountBooks/accountBooks'
                 })
-                setTimeout(() => {
-                  wx.reLaunch({
-                    url: '../accountBooks/accountBooks'
-                  })
-                }, 400)
-              }
+              }, 400)
             })
+          wx.cloud.callFunction({
+            name: 'deleteItems',
+            data: {
+              accountKey
+            }
+          })
         }
       }
     })
   },
 
+  // 修改账本
   save() {
     let { id } = this.data.account
     let { i, coverUrl, value } = this.data.isSelected
+    // 若没修改 则为之前的value
     let inputValue = this.data.inputValue || value
 
     wx.showLoading({
@@ -195,18 +215,18 @@ Page({
           inputValue,
           coverUrl,
           i
-        },
-        success: res => {
-          wx.hideLoading()
-          wx.showToast({
-            title: '保存成功'
-          })
-          setTimeout(() => {
-            wx.reLaunch({
-              url: '../accountBooks/accountBooks'
-            })
-          }, 400)
         }
+      })
+      .then(() => {
+        wx.hideLoading()
+        wx.showToast({
+          title: '保存成功'
+        })
+        setTimeout(() => {
+          wx.reLaunch({
+            url: '../accountBooks/accountBooks'
+          })
+        }, 400)
       })
   }
 })
