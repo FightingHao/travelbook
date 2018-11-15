@@ -1,0 +1,53 @@
+<view class="expense">
+  <block wx:for="{{detail}}" wx:key="index">
+    <view class="expense__type" bindtap="selectSpend" data-index="{{index}}">
+      <block wx:if="{{selectPicIndex == item.pic_index}}">
+        <view class="expense__type-icon" style="background-color: #e64343">
+          <image src="{{item.pic_url_act}}"></image>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="expense__type-icon">
+          <image src="{{item.pic_url}}"></image>
+        </view>
+      </block>
+      <view class="expense__type-name">{{item.type}}</view>
+    </view>
+  </block>
+</view>
+<view class="detail">
+  <block wx:for="{{detail[selectPicIndex].detail}}" wx:key="index">
+    <view class="detail__type" bindtap="selectSpendDetail" data-index="{{index}}">
+      <image class="detail__type-icon" src="{{item.detail_url}}"></image>
+      <block wx:if="{{selectIndex == item.detail_index}}">
+        <view class="detail__type-name" style="color: #f86319; border-bottom: 1rpx solid #f86319;">
+          {{item.detail_type}}
+        </view>
+      </block>
+      <block wx:else>
+        <view class="detail__type-name" style="border-bottom: 1rpx solid #e4e2e2;">
+          {{item.detail_type}}
+        </view>
+      </block>
+    </view>
+  </block>
+</view>
+<view class="input">
+  <input type="number" class="input__money" placeholder="￥0.00" bindinput="getMoney" />
+  <textarea cols="20" rows="10" placeholder="备注" class="input__desc" maxlength="36" bindinput="getDesc"></textarea>
+  <view class="input__map" bindtap="getLocation">
+    <image class="input__map-icon" src="https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/位置.svg?sign=dfaeed09a3c4472c4bab35cc144edacf&t=1541731744"></image>
+    <block wx:if="{{address}}">
+      <text class="input__map-text">{{address}}</text>
+    </block>
+    <block wx:else>
+      <text class="input__map-text">点击此处mark一下定位吧</text>
+    </block>
+  </view>
+</view>
+<block wx:if="{{money}}">
+  <button type="warn" bindtap="save">保存</button>
+</block>
+<block wx:else>
+  <button bindtap="err">保存</button>
+</block>

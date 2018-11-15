@@ -1,0 +1,97 @@
+.expense {
+  padding: 10rpx 0 5rpx;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  font-size: 34rpx;
+}
+
+.expense__type {
+  width: 16.7%;
+  text-align: center;
+}
+
+.expense__type-icon {
+  margin: 0 auto;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+}
+
+.expense__type-icon > image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 15rpx;
+}
+
+.detail__type {
+  width: 16.7%;
+  text-align: center;
+}
+
+.detail__type-icon {
+  margin: 0 auto;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  border: 1rpx solid #e4e2e2;
+  width: 100%;
+}
+
+.detail__type {
+  border-right: 1rpx solid #cfcdcd;
+}
+
+.detail__type-icon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 10rpx;
+}
+
+input.input__money {
+  box-sizing: border-box;
+  height: 100rpx;
+  width: 90%;
+  border: 1px solid #5e5b5b;
+  border-radius: 10rpx;
+  margin: 6% auto;
+  padding: 0 25rpx;
+  font-size: 45rpx;
+}
+
+.input__desc {
+  height: 200rpx;
+  box-sizing: border-box;
+  width: 90%;
+  border: 1px solid #5e5b5b;
+  border-radius: 10rpx;
+  margin: 6% auto;
+  padding: 20rpx;
+  font-size: 35rpx;
+}
+
+.input__map {
+  padding: 0 5%;
+}
+
+.input__map-icon {
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+}
+
+.input__map-text {
+  font-size: 28rpx;
+}
+
+button {
+  width: 80%;
+  border-radius: 50rpx;
+  margin-top: 10%;
+}
