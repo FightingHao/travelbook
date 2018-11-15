@@ -6,7 +6,7 @@
       <block wx:for="{{accounts}}" wx:key="index">
         <swiper-item>
           <accountCover account="{{item}}">
-            <image class="updateImg" bindtap="editAccount" data-account="{{item}}" src="https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/修改(1).svg?sign=b7b6f21449f4d4caaaf955e0c2d86c5f&t=1541059524"></image>
+            <image class="updateImg" catchtap="editAccount" data-account="{{item}}" src="https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/修改(1).svg?sign=b7b6f21449f4d4caaaf955e0c2d86c5f&t=1541059524"></image>
           </accountCover>
         </swiper-item>
       </block>
@@ -21,5 +21,25 @@
   </block>
   <block wx:if="{{isList}}">
     <image src="https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/图片列表.svg?sign=cdd9a3f60f57f7a44f96e46afca80b78&t=1540887036"></image>
+    <view class="account__list">
+      <view class="account__list-create">
+        <view class="account__list-year">2018</view>
+        <view class="account__list-new account__list-public" bindtap="createNewAccount">
+          <view class="account__list-point"></view>
+          <view class="account__list-time">{{now}}</view>
+          <image src="https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/add.png?sign=33d0e543f8f4f30dcc64d010afa99bda&t=1540813605"></image>
+          <view class="account__list-title">创建一个新账本</view>
+        </view>
+        <block wx:for="{{accounts}}" wx:key="index">
+          <view class="account__list-item account__list-public" bindtap="viewDetail" data-account="{{item}}">
+            <view class="account__list-point"></view>
+            <image src="{{item.coverUrl}}" mode="aspectFill"></image>
+            <view class="account__list-name">{{item.inputValue}}</view>
+            <view class="account__list-time">{{item.now}}</view>
+            <image class="account__list-update" catchtap="editAccount" data-account="{{item}}" src="https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/修改(1).svg?sign=b7b6f21449f4d4caaaf955e0c2d86c5f&t=1541059524"></image>
+          </view>
+      </block>
+      </view>
+    </view>
   </block>
 </view>
