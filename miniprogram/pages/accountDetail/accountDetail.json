@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "新增开支",
+  "usingComponents": {
+    "van-tab": "../../vant-weapp/tab/index",
+    "van-tabs": "../../vant-weapp/tabs/index",
+    "spendDetail": "../../components/spendDetail/spendDetail"
+  }
+}

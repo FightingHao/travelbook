@@ -1,0 +1,8 @@
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="支出">
+    <spendDetail detail="{{detail}}" accountKey="{{accountKey}}" isSpend="{{isSpend}}"></spendDetail>
+  </van-tab>
+  <van-tab title="收入">
+    <spendDetail detail="{{income}}" accountKey="{{accountKey}}" isSpend="{{isSpend}}"></spendDetail>
+  </van-tab>
+</van-tabs>
