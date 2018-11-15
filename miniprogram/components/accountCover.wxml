@@ -1,7 +1,0 @@
-<view class="accountDesc" style="background-image: url({{account.coverUrl}})">
-  <view class="accountName">
-    <view>{{account.inputValue}}</view>
-    <view class="accountTime">{{account.now}}</view>
-  </view>
-  <slot></slot>
-</view>
