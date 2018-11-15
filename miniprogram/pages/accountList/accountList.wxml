@@ -1,0 +1,24 @@
+<block wx:if="{{dateArr.length > 0}}">
+  <block wx:for="{{dateArr}}" wx:key="index">
+    <view class="account__title">
+      <text class="account__title-time">{{item.item[0].fullDate}}</text>
+      <text class="account__title-spend">支出{{item.spend}}元 收入{{item.income}}元</text>
+    </view>
+    <block wx:for="{{item.item}}" wx:key="index">
+      <view class="account__detail">
+        <view class="account__detail-pic" wx:if="{{item.money > 0}}">
+          <image src="{{item.pic_url}}"></image>
+        </view>
+        <view class="account__detail-pic" wx:if="{{item.money < 0}}" style="background-color: #4dd34d">
+          <image src="{{item.pic_url}}"></image>
+        </view>
+        <view class="account__detail-name">{{item.pic_type}}</view>
+        <view wx:if="{{item.money > 0}}" class="account__detail-money">-{{item.money}}</view>
+        <view wx:if="{{item.money < 0}}" class="account__detail-money">+{{-item.money}}</view>
+      </view>
+    </block>
+  </block>
+</block>
+<block wx:else>
+  <view class="no">记笔账试试看吧~</view>
+</block>
