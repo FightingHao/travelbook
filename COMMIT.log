@@ -1,14 +1,47 @@
-2018-11-01 √
+## 每日提交记录
+  做这个的目的其实是为了监督自己不要偷懒，坚持每天完成项目一部分，并总结一点项目经验。
+  由于学校每天课程数量不同，每天完成的量也不太一样。
+  总之要保证手感，每天提交github！  Fighting~
+
+2018-10-29 打卡√
   今日安排
-    写页面
-      index 首页
-      editAccount 账本编辑页  使用vant组件
-      accoutBooks 总账本页  flex布局+swiper组件
+    子页面总体规划
+      |-pages
+        |-index
+        |-accountBooks
+        |-editAccount
+        |-accountPage
+        |-accountCalendar
+        |-accountList
+        |-accountDetail
   完成时间
     23:39
   完成度
-    结构样式完成度——80%
-    交互完成度——30%
-    总项目完成度——20%
+    项目架构基本确立
   总结
-    editAccount页和accoutBooks较多，用时较长。不过最后界面效果还算不错
+    一个好的项目从架构规划开始^_^ （PS：虽然不专业）
+
+
+2018-10-30 打卡√
+  今日安排
+    index、accountBooks 页面开干
+  完成时间
+    第二天 00:17
+  完成度
+    index完成度——100%
+    accountBooks完成度——50%
+  总结
+    index页面比较简单，页面逻辑较少
+    accountBooks页面逻辑较多，只完成了第一部分。
+    布局使用flex布局，组件使用swiper组件
+
+
+2018-10-31 打卡√
+  今日安排
+    accountBooks页面继续完成
+  完成时间
+    23:17
+  完成度
+    accountBooks 基本完成
+  总结
+    accountBooks 页面使用虚拟数据先搭框架，框架搭好再用真实数据库数据填充
