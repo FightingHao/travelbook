@@ -33,42 +33,43 @@ Page({
           title: this.data.account.inputValue
         })
       })
-
-    db.collection('spend_items')
-      .get()
-      .then(res => {
+      .then(() => {
         let { spend, income, spend_money, income_money, accountKey } = this.data
-        res.data.forEach(element => {
-          let { money, date } = element
-          if (_this.compareTime(date) && accountKey == element.accountKey) {
-            if (money > 0) {
-              spend_money += money
-              spend.push(element)
-            } else {
-              element.money = -money
-              income_money += element.money
-              income.push(element)
-            }
-          }
-        })
-        _this.setData({
-          spend,
-          income,
-          spend_money,
-          income_money
-        })
-        wx.hideLoading()
+        db.collection('spend_items')
+          .where({
+            accountKey: Number(accountKey),
+            fullDate: _this.getToday()
+          })
+          .get()
+          .then(res => {
+            res.data.forEach(element => {
+              let { money } = element
+              if (money > 0) {
+                spend_money += money
+                spend.push(element)
+              } else {
+                element.money = -money
+                income_money += element.money
+                income.push(element)
+              }
+            })
+            _this.setData({
+              spend,
+              income,
+              spend_money,
+              income_money
+            })
+            wx.hideLoading()
+          })
       })
   },
 
-  compareTime(timeArr) {
+  getToday() {
     let year = new Date().getFullYear()
     let month = new Date().getMonth() + 1
     let day = new Date().getDate()
-    if (year === timeArr[0] && month === timeArr[1] && day === timeArr[2])
-      return true
-    else
-      return false
+    let fullDate = year + '-' + month + '-' + day
+    return fullDate
   },
 
   // 跳转日历页

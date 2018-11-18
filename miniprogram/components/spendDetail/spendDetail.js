@@ -84,7 +84,6 @@ Component({
       let year = new Date().getFullYear()
       let month = new Date().getMonth() + 1
       let day = new Date().getDate()
-      let date = [year, month, day]
 
       let fullDate = year + '-' + month + '-' + day
 
@@ -119,7 +118,6 @@ Component({
                   pic_url,
                   pic_type,
                   accountKey,
-                  date,
                   fullDate
                 }
               })
