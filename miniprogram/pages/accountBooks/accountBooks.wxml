@@ -23,7 +23,7 @@
     <image src="https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/图片列表.svg?sign=cdd9a3f60f57f7a44f96e46afca80b78&t=1540887036"></image>
     <view class="account__list">
       <view class="account__list-create">
-        <view class="account__list-year">2018</view>
+        <view class="account__list-year">{{year}}</view>
         <view class="account__list-new account__list-public" bindtap="createNewAccount">
           <view class="account__list-point"></view>
           <view class="account__list-time">{{now}}</view>

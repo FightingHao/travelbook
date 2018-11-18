@@ -4,7 +4,8 @@ Page({
   data: {
     isList: false,
     accounts: [],
-    now: null
+    now: null,
+    year: null
   },
 
   // 创建账本
@@ -53,8 +54,10 @@ Page({
     wx.cloud.callFunction({
       name: 'getTime',
       success: (res) => {
+        let year = res.result.split('-')[0]
         this.setData({
-          now: res.result
+          now: res.result,
+          year
         })
       },
       fail: console.error

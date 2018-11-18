@@ -15,6 +15,7 @@
     </view>
   </block>
 </view>
+
 <view class="detail">
   <block wx:for="{{detail[selectPicIndex].detail}}" wx:key="index">
     <view class="detail__type" bindtap="selectSpendDetail" data-index="{{index}}">
@@ -32,6 +33,7 @@
     </view>
   </block>
 </view>
+
 <view class="input">
   <input type="number" class="input__money" placeholder="￥0.00" bindinput="getMoney" />
   <textarea cols="20" rows="10" placeholder="备注" class="input__desc" maxlength="36" bindinput="getDesc"></textarea>
@@ -45,6 +47,7 @@
     </block>
   </view>
 </view>
+
 <block wx:if="{{money}}">
   <button type="warn" bindtap="save">保存</button>
 </block>
