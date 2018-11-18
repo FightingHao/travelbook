@@ -1,8 +1,3 @@
 <view class="homepage">
-  <!-- <view>
-    <image></image>
-    <view>旅行账本</view>
-  </view> -->
-
   <button type="warn" bindtap="startAccounts">开始记账</button>
 </view>
