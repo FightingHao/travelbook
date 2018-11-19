@@ -1,4 +1,5 @@
-> # 感谢您的拜访！有需要的欢迎fork ，如果喜欢，动动小手给个Star吧 :blush:
+> # 感谢您的拜访！
+> # 有需要的欢迎fork ，如果喜欢，动动小手给个Star吧 :blush:
 
 ![](https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/travelbook演示gif/完整演示.gif?sign=231ecde597ab1d2e27c3354811cd4082&t=1542608051)
 ## IDE
@@ -636,10 +637,6 @@ isExist(item, arr) {
 ## 一点感悟
 > 提交日志
 > https://github.com/FightingHao/travelbook/blob/master/COMMIT.log
-
-之前做项目时，只是在github提交时草草写一句话当做提交日志。这次做了一个比较正式提交日志，做这个的初衷其实是为了监督自己不要偷懒，坚持每天完成项目一部分，并总结不足之处。学而时习之才能成长的更快！  
-
-篇幅有限，奉上项目<a href="https://github.com/FightingHao/travelbook">github</a> 如果你喜欢这篇文章或是这个项目，不妨进去点个Star支持下，有兴趣的朋友欢迎Fork，一起探讨知识或是旅行~~当然也希望您能留下一些宝贵的建议。感激不尽！
 
 生活不止眼前的苟且，还有诗和远方。最后要感谢腾讯旅游的各位大大设计出一个这么简洁美观大方的小程序产品，实属良心之作！
 
