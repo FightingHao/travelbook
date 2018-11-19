@@ -1,4 +1,4 @@
-> # 有需要的欢迎fork ，如果喜欢，动动小手给个Star吧 :blush:
+> # 有需要的欢迎fork ，如果喜欢，动动小手给个Star吧 :relaxed:
 
 ![](https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/travelbook演示gif/完整演示.gif?sign=231ecde597ab1d2e27c3354811cd4082&t=1542608051)
 ## IDE
