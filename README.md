@@ -1,7 +1,4 @@
-最近沉迷小程序开发，发现了一款功能、界面、体验俱佳的小程序“旅行小账本”。该小程序由<a href="http://nanchang.ly.qq.com/">腾讯旅游</a>操刀制作，简约大气，功能性强。借着最近<a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html">云开发</a>的热潮，着手做了个简约版——"旅行小账本"。效果比较满意，毕竟前后台一人单干。
-
-Talk is cheap！  
-show~
+> <font>有需要的欢迎fork ，如果喜欢，动动小手给个Stargrinning</font>
 
 ![](https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/travelbook演示gif/完整演示.gif?sign=231ecde597ab1d2e27c3354811cd4082&t=1542608051)
 ## IDE
