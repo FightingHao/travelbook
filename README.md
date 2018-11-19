@@ -3,7 +3,7 @@
 掘金地址:  
 <a href="https://juejin.im/post/5bea81ddf265da612239e360">诗和远方 旅行小账本云开发实战</a>
 
-![](https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/travelbook演示gif/完整演示.gif?sign=231ecde597ab1d2e27c3354811cd4082&t=1542608051)
+![](https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/travelbook演示gif/完整演示.gif?sign=3b4efeef263eb937c1932b5f23192c84&t=1542621092)
 ## IDE
 - <a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html?t=201822">微信开发者工具</a>  
 - <a href="https://code.visualstudio.com/Download">VSCode</a>  
