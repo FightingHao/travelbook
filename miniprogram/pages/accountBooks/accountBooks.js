@@ -2,10 +2,10 @@ const db = wx.cloud.database()
 
 Page({
   data: {
-    isList: false,
-    accounts: [],
-    now: null,
-    year: null
+    isList: false, // 转换页面风格的标识 true为竖向风格 false为横向风格
+    accounts: [],  // 存储查询的账本数据
+    now: null,     // 存储当日时间
+    year: null     // 存储年份
   },
 
   // 创建账本
@@ -51,6 +51,7 @@ Page({
     // 获取页面风格转换标识
     var isList = wx.getStorageSync('isList')
 
+    // 调用云函数接口 获取当前日期
     wx.cloud.callFunction({
       name: 'getTime',
       success: (res) => {
@@ -68,7 +69,7 @@ Page({
       .get({
         success: res => {
           this.setData({
-            accounts: res.data.reverse(),
+            accounts: res.data.reverse(), // 反转数组，优先显示创建早的账本
             isList
           })
           wx.hideLoading()
