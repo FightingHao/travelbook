@@ -1,20 +1,17 @@
 > # 有需要的欢迎fork ，如果喜欢，动动小手给个Star吧 :relaxed:
 
-掘金地址:  
-<a href="https://juejin.im/post/5c00e0736fb9a049ca3713d7">诗和远方 旅行小账本云开发实战</a>
-
 ![](https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/travelbook演示gif/完整演示.gif?sign=3b4efeef263eb937c1932b5f23192c84&t=1542621092)
 ## IDE
-- <a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html?t=201822">微信开发者工具</a>  
-- <a href="https://code.visualstudio.com/Download">VSCode</a>  
+- <a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html?t=201822">微信开发者工具</a>
+- <a href="https://code.visualstudio.com/Download">VSCode</a>
 
-小程序开发必然少不了微信开发者工具，再加上其对云开发的全面支持，再好不过的开发利器。但熟悉微信开发者工具的朋友们应该知道，它不支持<a href="https://www.cnblogs.com/cnjava/p/3225174.html">Emmet缩写语法</a>，并且wxml的属性值默认用单引号表示(强迫症表示很难受)。  
-而VSCode很好的补足了微信开发者工具的不足之处，并且支持多元化<a href="https://juejin.im/post/5a08d1d6f265da430f31950e">插件开发</a>，轻量好用。  
+小程序开发必然少不了微信开发者工具，再加上其对云开发的全面支持，再好不过的开发利器。但熟悉微信开发者工具的朋友们应该知道，它不支持<a href="https://www.cnblogs.com/cnjava/p/3225174.html">Emmet缩写语法</a>，并且wxml的属性值默认用单引号表示(强迫症表示很难受)。
+而VSCode很好的补足了微信开发者工具的不足之处，并且支持多元化<a href="https://juejin.im/post/5a08d1d6f265da430f31950e">插件开发</a>，轻量好用。
 所以这里推荐采用微信开发者工具+VSCode配合开发。微信开发者工具负责调试、模拟小程序运行情况，VSCode负责代码编辑工作。二者各司其职，会使开发更加的高效、便捷。
 
 ## 总体架构
-该项目基于小程序云开发，使用的模板是<a href="https://cloud.tencent.com/developer/article/1345310">云开发快速启动模板</a>  
-由于是个全栈项目，前端使用小程序所支持的wxml + wxss + js开发模式，命名采用<a href="https://juejin.im/post/5bb4678a5188255c980be9d2">BEM</a>命名规范。后台则是借助云数据库+云储存进行数据管理。  
+该项目基于小程序云开发，使用的模板是<a href="https://cloud.tencent.com/developer/article/1345310">云开发快速启动模板</a>
+由于是个全栈项目，前端使用小程序所支持的wxml + wxss + js开发模式，命名采用<a href="https://juejin.im/post/5bb4678a5188255c980be9d2">BEM</a>命名规范。后台则是借助云数据库+云储存进行数据管理。
 
 项目总体结构
 ```
@@ -70,14 +67,14 @@
 ```
 <!--整体用flex + 百分比布局-->
 <input type="text" class="accuntName" placeholder="旅行账本名称" bindinput="getInput" />
-  
+
 <van-panel title="选择封面" class="panel">
     <van-row class="imageBox">
         <!--使用wx:for遍历数据库账本图片信息-->
         <van-col span="8" class="imgCol" bindtap="selectThis">
             <image class="select" src="{{}}"></image>
         </van-col>
-        
+
         <van-col span="8">
             <view class="addBox" bindtap="useMore">更多封面</view>
         </van-col>
@@ -97,7 +94,7 @@
         <view>{{}}</view>
         <view class="accountTime">{{}}</view>
     </view>
-    
+
     <!--绝对定位-->
     <image class="updateImg" catchtap="editAccount" src="{{}}"></image>
 </view>
@@ -180,7 +177,7 @@ days_style.push({
 <!--wxml中引用-->
 <calendar weeks-type="cn" cell-size="50" next="{{true}}" prev="{{true}}"
     show-more-days="{{true}}" calendar-style="demo6-calendar"
-    header-style="calendar-header"board-style="calendar-board" active-type="rounded" 
+    header-style="calendar-header"board-style="calendar-board" active-type="rounded"
     lunar="true" header-style="header"calendar-style="calendar"days-color="{{days_style}}">
 </calendar>
 ```
@@ -282,7 +279,7 @@ spend_items   消费明细表
 
 ![](https://user-gold-cdn.xitu.io/2018/11/18/16727717417b2090?w=570&h=335&f=png&s=5853)
 ### 云函数设计
-<a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/guide/functions.html">云函数</a>简单来说就是在云后端(Node.js)运行的代码，本地看不到这些代码的执行过程，全封闭式只暴露接口供本地调用执行，本地只需等待云端代码执行完毕后返回结果。这也是<a href="https://www.cnblogs.com/bobodeboke/p/5733422.html">面向接口编程</a>的思想体现。  
+<a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/guide/functions.html">云函数</a>简单来说就是在云后端(Node.js)运行的代码，本地看不到这些代码的执行过程，全封闭式只暴露接口供本地调用执行，本地只需等待云端代码执行完毕后返回结果。这也是<a href="https://www.cnblogs.com/bobodeboke/p/5733422.html">面向接口编程</a>的思想体现。
 
 项目中的云函数设计
 
@@ -371,7 +368,7 @@ switchList() {
 
 // 获取页面风格转换标识
 var isList = wx.getStorageSync('isList')
-    
+
 // 查询账本
 db.collection('accounts')
   .get({
@@ -401,7 +398,7 @@ wx.cloud.callFunction({
 ### 账本页增删改
 ![](https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/travelbook演示gif/账本增删改.gif?sign=c11363e1b5e3ed4ad6671533a40b0730&t=1542610737)
 
-账本页通过调用相应的云数据库API，可进行一系列的增删改操作。值得一提的是，修改时需要表单回显，删除时需要级联删除。因为一个账本中有许多收支情况，spend_items表就是进行收支记录，所以删除账本时需要级联删除对应的spend_items表中的收支信息。  
+账本页通过调用相应的云数据库API，可进行一系列的增删改操作。值得一提的是，修改时需要表单回显，删除时需要级联删除。因为一个账本中有许多收支情况，spend_items表就是进行收支记录，所以删除账本时需要级联删除对应的spend_items表中的收支信息。
 
 一些重要的逻辑
 - 封面单选逻辑
@@ -414,7 +411,7 @@ wx.cloud.callFunction({
         now: null,       // 当前时间
         account: {}      // 传入账本信息
     }
-    
+
       // 单选逻辑 通过构造{'0': isSelected}来实现
     selectThis(e) {
         let index = e.currentTarget.dataset.index
@@ -457,7 +454,7 @@ wx.cloud.callFunction({
         let { i, coverUrl, value } = this.data.isSelected
         // 若没修改 则为之前的value
         let inputValue = this.data.inputValue || value
-        
+
         db.collection('accounts')
           .doc(id)
           .update({
